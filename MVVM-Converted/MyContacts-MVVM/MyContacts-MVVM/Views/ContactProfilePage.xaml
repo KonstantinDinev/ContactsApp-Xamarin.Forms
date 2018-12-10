@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="MyContactsMVVM.Views.ContactProfilePage"
+             Title="{Binding FirstName}"
+             Padding="20">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="top-frame" TargetType="Frame">
+                <Setter Property="BorderColor" Value="Blue" />
+                <Setter Property="HasShadow" Value="false" />
+            </Style>
+            <Style x:Key="bottom-frame" TargetType="Frame">
+                <Setter Property="BorderColor" Value="Purple" />
+                <Setter Property="HasShadow" Value="false" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <FlexLayout Direction="Column">
+        <Frame Style="{StaticResource top-frame}" FlexLayout.Basis="30%">
+            <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="SpaceEvenly">
+                
+                <Image
+                    WidthRequest="60"
+                    HeightRequest="60"
+                    Aspect="AspectFill"
+                    HorizontalOptions="Start"
+                    Source="{Binding ImageUrl}"
+                />
+                <Label
+                    Text="{Binding FullName}"
+                    FontSize="12"
+                    FontAttributes="Bold"
+                />
+                <Label
+                    Text="{Binding PhoneNumber}"
+                    TextColor="Gray"
+                    FontSize="12"
+                />
+         
+            </FlexLayout>
+        </Frame>
+        
+        <Frame Style="{StaticResource bottom-frame}" FlexLayout.Basis="70%">
+            <FlexLayout>
+                
+            </FlexLayout>
+        </Frame>
+    </FlexLayout>
+</ContentPage>
