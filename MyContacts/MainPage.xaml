@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:MyContacts" x:Class="MyContacts.MainPage"
+             Title="ThunderBook"
+             ><!--BackgroundImage="CMS_Creative.jpg"-->
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0, 0, 0, 0"
+                    Android="0, 0, 0, 0" 
+                    WinPhone="0, 0, 0, 0"
+        />
+    </ContentPage.Padding>
+
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="imgBackground" Aspect="AspectFill" Grid.Row="0" Grid.Column="0" />
+        <StackLayout Grid.Row="0" Grid.Column="0" Padding="45">
+            <Label Text="Contacts" HorizontalOptions="Center" VerticalOptions="Start" FontSize="Large" Font="24" />
+            <Button Text="Get Contacts" 
+                    BackgroundColor="Maroon" 
+                    TextColor="White" 
+                    HorizontalOptions="Fill" VerticalOptions="EndAndExpand" 
+                    Clicked="Handle_Clicked"
+                    x:Name="btnGetContacts"
+                    />
+            <Button Text="Synchronize" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

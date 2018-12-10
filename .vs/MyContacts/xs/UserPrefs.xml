@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{68557EC9-C96C-4C2C-9A80-D8A10EE65706}|Default">
+  <MonoDevelop.Ide.ItemProperties.MyContacts.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MyContacts.Android/Resources/values/styles.xml">
+    <Files>
+      <File FileName="MyContacts/Views/ContactsPage.xaml" Line="11" Column="14" />
+      <File FileName="MyContacts.Android/Resources/values/styles.xml" Line="26" Column="13" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.ItemProperties.MyContacts.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.5A4D40F6-448D-4CE1-A535-C5536D7C1DBE" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

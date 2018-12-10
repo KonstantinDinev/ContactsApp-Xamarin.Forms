@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="MyContacts.ContactsList"
+    Title="Contacts" 
+    Icon="user.png">
+    
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0, 0, 0, 0"
+                    Android="0, 0, 0, 0" 
+                    WinPhone="0, 0, 0, 0"
+                     />
+    </ContentPage.Padding>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="OnAddContact" />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <SearchBar Placeholder="Search ..." 
+                   TextChanged="OnTextChanged" 
+                   x:Name="search" />
+        
+        <ListView x:Name="lsView" SeparatorColor="Blue" 
+                  HasUnevenRows="true" 
+                  IsGroupingEnabled="true" GroupDisplayBinding="{Binding Title}"
+                  GroupShortNameBinding="{Binding ShortTitle}"
+                  ItemTapped="Handle_ItemTapped"
+                  ItemSelected="Handle_ItemSelected"
+                  IsPullToRefreshEnabled="true"
+                  Refreshing="Handle_Refreshing"
+                  >
+            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                   <!--<ImageCell Text="{Binding Name}" Detail="{Binding Status}" ImageSource="{Binding ImageUrl}" />-->
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Call" Clicked="Call_Clicked" CommandParameter="{Binding .}" />
+                            <MenuItem Text="Delete" Clicked="Delete_Clicked" IsDestructive="true" CommandParameter="{Binding .}" />
+                        </ViewCell.ContextActions>
+                        
+                    <StackLayout Orientation="Horizontal" Padding="5">
+                        <Image Source="{Binding ImageUrl}" HeightRequest="50" WidthRequest="50" />
+                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical" Spacing="5">
+                            <Label Text="{Binding FullName}" />
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="ID:" FontSize="Micro" />
+                                <Label Text="{Binding Id}" TextColor="Gray" FontSize="Micro" />
+                                <Label Text="Status:" FontSize="Micro" />
+                                <Label Text="{Binding Status}" TextColor="{Binding StatusColor}" FontSize="Micro" />
+                            </StackLayout>
+                        </StackLayout>
+                        <Button Text="Profile"
+                                CommandParameter="{Binding .}"
+                                Clicked="OnProfile_Clicked" />
+                   </StackLayout>
+                   </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
+    </StackLayout>
+    
+</ContentPage>

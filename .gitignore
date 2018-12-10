@@ -1,0 +1,13 @@
+.DS_Store
+MyContacts/bin/*
+MyContacts/obj/*
+MyContacts.Android/bin/*
+MyContacts.Android/obj/*
+MyContacts.iOS/bin/*
+MyContacts.iOS/obj/*
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
